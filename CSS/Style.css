@@ -1,0 +1,521 @@
+/* -- Starts Global Rules -- */
+:root {
+    --frist-color : #1652f0;
+    --second-color : #10d876;
+    --third-color : #f2f6fe;
+    --fourth-color : #555;
+    --visible-text : #8797b6;
+    --unvisible-text : #bebfde;
+}
+
+* {
+    box-sizing: border-box;
+}
+/* html {
+    scroll-behavior :smooth;
+} */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    /* margin: 0px 40px; */
+}
+
+
+/* -- Ends Global Rules -- */
+
+/* Start Grid With Layot */
+.layot {
+    display: grid;
+    grid-template-columns: 5% repeat(9, 1fr);
+    grid-template-rows: 12% auto;
+    grid-template-areas:
+        "asid head head head head head head head head head"
+        "asid sec-one sec-one sec-one sec-one sec-two sec-two sec-two sec-two sec-two";
+    height: 100vh;
+}
+@media (max-width : 768px) {
+    .layot {
+        grid-template-columns: 8% repeat(9, 1fr);
+        grid-template-rows: 8% auto;
+        grid-template-areas:
+        "asid head head head head head head head head head"
+        "asid sec-one sec-one sec-one sec-one sec-one sec-one sec-one sec-one sec-one"
+        "asid sec-two sec-two sec-two sec-two sec-two sec-two sec-two sec-two sec-two";
+    }
+    
+}
+/* End Grid With Layot */
+
+/* Start Header */
+.header {
+    grid-area: head;
+    border-bottom: 1px solid #eee;
+}
+
+.header .user {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+.header .user .logo {
+    width: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10px;
+}
+
+.header .user .logo i {
+    background-color: var(--frist-color);
+    color: white;
+    padding: 6px;
+    border-radius: 6px;
+    margin-right: 5px;
+    font-size: 10px;
+}
+.header .user .logo span {
+    font-size: 14px;
+    font-weight: 900;
+    color: var(--frist-color);
+}
+
+
+.header .user .info {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 45%;
+    margin-right: 16px;
+}
+.header .user .info .bit-coin {
+    height: 30px;
+    width: 200px;
+}
+.header .user .info .bit-coin .bit{
+    padding: 5px;
+    background-color: #eef2fe;
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    color: var(--frist-color);
+    width: 45%;
+    display: inline-block;
+    text-align: center;
+    border: 1px solid #eef2fe;
+    font-size: 12px;
+}
+.header .user .info .bit-coin .bit i {
+    margin-left : 10px
+}
+.header .user .info .bit-coin .usd{
+    padding: 5px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+    width: 45%;
+    border: 1px solid #eee;
+    margin-left: -5px;
+    display: inline-block;
+    font-size: 12px;
+    text-align: center;
+    color: var(--visible-text);
+    font-weight: bold;
+}
+.header .user .info .name {
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .user .info .name i:first-child{
+    padding: 8px;
+    background-color: var(--frist-color);
+    color: white;
+    border-radius: 50%;
+    font-size: 11px;
+}
+.header .user .info .name i:last-child{
+    color: #ccc;
+    cursor: pointer;
+    font-size: 12px;
+}
+.header .user .info .name span{
+    font-size: 11px;
+    color: var(--visible-text);
+}
+@media (max-width : 768px) {
+    .header .user .logo {
+        width: 120px;
+        margin-left: 15px;
+    }
+    .header .user .logo i {
+        padding: 5px;
+        border-radius: 6px;
+        margin-right: 5px;
+        font-size: 10px;
+    }
+    .header .user .logo span {
+        font-size: 12px;
+    }
+    .header .user .info {
+        width: 200px;
+    }
+    .header .user .info .bit-coin {
+        width : 180px
+    }
+    .header .user .info .bit-coin .bit i {
+        margin-left: 3px;
+    }
+    .header .user .info .bit-coin .bit,
+    .header .user .info .bit-coin .usd {
+        padding: 5px 1px;
+        font-size: 6px;
+    }
+    .header .user .info .name i:first-child{
+        padding: 7px;
+        font-size: 6px;
+    }
+    .header .user .info .name i:last-child,
+    .header .user .info .name span {
+        font-size: 6px;
+    }
+}
+/* End Header */
+
+
+
+/* Start Aside */
+.aside {
+    background-color: var(--frist-color);
+    grid-area: asid;
+    background-color: #0d40c6;
+}
+.aside .icons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: 30%;
+    margin: 100px 0px;
+}
+.aside .icons i {
+    color: white;
+    font-size: 12px;
+    padding: 12px;
+    cursor: pointer;
+}
+.aside .icons i:nth-child(2) {
+    background-color: var(--frist-color);
+    border-radius: 6px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+}
+
+@media (max-width : 768px) {
+    .aside .icons {
+        height: 16%;
+        margin: 120px 0px;
+        position: sticky;
+        top: 10%;
+    }
+    .aside .icons i {
+        font-size: 10px;
+        padding: 6px;
+    }
+}
+/* End Aside */
+
+
+/* Start Section One */
+.sec-one {
+    grid-area: sec-one;
+}
+.sec-one p {
+    width: fit-content;
+    padding: 0px 40px;
+    font-size: 12px;
+    color: var(--frist-color);
+    font-weight: bold;
+}
+.sec-one p span {
+    color: var(--visible-text);
+}
+.sec-one .buttons {
+    padding: 10px 5px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    margin-left: 55px;
+    margin-right: 55px;
+}
+.sec-one .buttons .butt-one,
+.sec-one .buttons .butt-two {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48%;
+    padding: 15px;
+    border-radius: 5px;
+    transition: .3s linear;
+}
+@media (max-width : 550px) {
+    .sec-one .buttons .butt-one,
+    .sec-one .buttons .butt-two {
+    padding: 9px;
+    font-size: 12px;
+    }
+}
+@media (min-width : 769px) and (max-width : 992px) {
+    .sec-one .buttons .butt-one,
+    .sec-one .buttons .butt-two {
+        font-size: 13px;
+        padding: 11px 15px;
+    }
+}
+.sec-one .buttons .butt-one {
+    background: var(--frist-color);
+    color: white;
+}
+.sec-one .buttons .butt-two {
+    color: var(--frist-color);
+    border: 1px solid #eee;
+}
+.sec-one .buttons .butt-one:hover {
+    cursor: pointer;
+    box-shadow: inset  0 10.5em 0 0 white;
+    color: var(--frist-color);
+    border: 1px solid var(--frist-color);
+}
+.sec-one .buttons .butt-two:hover {
+    box-shadow: 0 0.5em 0.5em -0.4em #333;
+    transform: translateY(-0.5em);
+    -webkit-transform: translateY(-0.5em);
+    -moz-transform: translateY(-0.5em);
+    -ms-transform: translateY(-0.5em);
+    -o-transform: translateY(-0.5em);
+    cursor: pointer;
+    
+}
+
+.sec-one .cols {
+    padding: 0px 40px;
+}
+.sec-one .cols h4 {
+    font-size: 12px;
+    margin: 10px 0px;
+    color: var(--fourth-color);
+}
+.sec-one .cols .box {
+    padding: 10px;
+    background-color: var(--third-color);
+    font-size: 13px;
+    color: var(--visible-text);
+}
+.sec-one .cols .col {
+    margin-bottom: 25px;
+}
+.sec-one .cols .box i {
+    margin-left: 35%;
+    font-size: 8px;
+    margin-right: 10px;
+}
+.sec-one .cols .col-three .box i {
+    margin-left: calc((35%) - 30.35px);
+}
+.sec-one .cols .box span:last-child {
+    margin-left: 5px;
+}
+.sec-one .cols .col-three .box {
+    color : var(--unvisible-text);
+}
+.sec-one .cols .col-three {
+    margin-bottom: 15px;
+}
+.sec-one .info {
+    padding: 8px 40px;
+    display: flex;
+    justify-content: space-between;
+}
+.sec-one .info span {
+    font-size: 12px;
+}
+.sec-one .info span:first-child {
+    color: var(--visible-text);
+}
+.sec-one .info span:last-child {
+    color: var(--fourth-color);
+}
+.sec-one .foot {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 20vh;
+    margin-top: 16px;
+}
+.sec-one .foot .main-button {
+    margin: 25px 40px;
+    padding: 12px 40px;
+    background: var(--second-color);
+    text-align: center;
+    font-size: 12px;
+    color: white;
+    border-radius: 5px;
+    transition: all .4s ease-in-out;
+}
+.sec-one .foot .main-button:hover {
+    box-shadow: 0 8px 18px #10d87657;
+    opacity: 0.6;
+    cursor: pointer;
+ 
+}
+.sec-one .foot .note {
+    font-size: 12px;
+    padding: 10px 40px;
+    color: var(--visible-text);
+    line-height: 20px;
+}
+@media (min-width : 500px) and (max-width : 768px) {
+    .sec-one .foot .main-button {
+        margin: 25px auto;
+        padding: 22px 40px;
+        font-size: 16px;
+        width: 60%;
+    }
+}
+@media (min-width : 769px) and (max-width : 992px) {
+    .sec-one .cols h4,
+    .sec-one .cols .box {
+        font-size: 10px;
+    }
+    .sec-one .foot .note {
+        font-size: 11px;
+    }
+}
+
+/* End Section One */
+
+
+/* Start Section Two */
+.sec-two {
+    grid-area: sec-two;
+}
+.sec-two .image {
+    width: 30px;
+    height: 38px;
+}
+.sec-two .image img {
+    width: 100%;
+    border-radius: 50%;
+    height: 100%;
+}
+.sec-two .person {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 70px;
+    position: relative;
+}
+.sec-two .person .one,
+.sec-two .person .two {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.sec-two .person .one {
+    margin-left: 40px;
+}
+.sec-two .person .two {
+    flex-direction: row-reverse;
+    margin-right: 40px;
+}
+.sec-two .person .info h3 {
+    width: 60px;
+    font-size: 14px;
+    font-weight: normal;
+    color: var(--fourth-color);
+    margin: 5px 10px;
+}
+.sec-two .person .info a {
+    text-decoration: none;
+    color: var(--frist-color);
+    font-size: 12px;
+    margin-left: 10px;
+    margin-top: 7px;
+}
+.sec-two .person .info a:hover {
+    color :#4176fa;
+}
+.sec-two .person .two .info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.sec-two .person .two .info h3{
+    margin: 5px 10px;
+    text-align: right;
+}
+.sec-two .person .two .info a{
+    margin-right: 10px;
+}
+
+.sec-two .cols {
+    padding: 25px 40px;
+}
+.sec-two .cols .col {
+    margin-bottom: 15px;
+}
+.sec-two .cols .col .box {
+    padding: 15px 10px;
+    background-color: var(--third-color);
+    font-size: 13px;
+    color: var(--visible-text);
+    display: flex;
+    justify-content: space-between;
+}
+.sec-two .cols .col-one .box {
+    color : var(--frist-color)
+}
+.sec-two .cols .col .box span:last-child {
+    
+    width: 50%;
+}
+.sec-two .cols .col-six .box span:last-child {
+    color: rgb(255, 120, 143);
+}
+
+@media (max-width : 768px) {
+    .sec-two .person::after {
+        content: "";
+        position: absolute;
+        top: -35px;
+        left: 21%;
+        width: 60%;
+        height: 2px;
+        background-color: var(--frist-color);
+        margin-top: 10px;
+    }
+    .sec-two .image {
+        width: 28px;
+        height: 30px;
+    }
+    .sec-two .person .info a {
+        font-size: 8px;
+    }
+    .sec-two .person .info h3 {
+        width: 50px;
+        font-size: 11px;
+    }
+    .sec-two .cols .col .box {
+        font-size: 9px;
+    }
+}
+@media (min-width : 769px) and (max-width : 992px) {
+    .sec-two .cols .col .box {
+        font-size: 10px;
+    }
+    .sec-two .person .info h3,
+    .sec-two .person .info a {
+        font-size: 11px;
+    }
+}
+/* End Section Two */
